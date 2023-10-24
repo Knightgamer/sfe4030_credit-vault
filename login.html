@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+
+    <style>
+        body {
+            background-color: #a1a1a1;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: center; /* Center the container vertically */
+            height: 100vh; /* Make the container full height of the viewport */
+            margin: 0;
+        }
+
+        .container {
+            max-width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            text-align: center; /* Center the text inside the container */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Logo container */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        /* Logo image */
+        .logo {
+            max-width: 40%; /* Ensure the logo scales down to fit the container */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box; /* Ensure padding and border don't increase the width */
+        }
+
+        /* Password container */
+        .password-container {
+            position: relative;
+        }
+        /* Password input field */
+        .password-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box; /* Ensure padding and border don't increase the width */
+        }
+         /* Show password icon */
+         .show-password-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        button {
+            width: 50%; /* Make the button 50% width of the container */
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px; /* Make it more rounded */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .small-text {
+            font-size: 14px; /* Adjust the font size as needed */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+         <!-- Logo container -->
+         <div class="logo-container">
+            <img class="logo" src="images/Volks Elevator Logo.png" alt="Volks Logo">
+        </div>
+        <h2>Welcome to Volks Elevator</h2>
+        <form action="login.php" method="POST">
+            
+            <input type="text" name="username" placeholder="Username" required>
+            
+           <!-- Password container -->
+           <div class="password-container">
+            <input type="password" name="password" class="password-input" id="password" placeholder="Password" required>
+            <!-- Show password icon -->
+            <i class="show-password-icon" id="showPasswordIcon">&#x1F441;</i>
+            
+            </div>
+                <div class="small-text">
+                <p>Forgot Password?</p>
+                <button type="submit">Login</button>
+                <p><b>OR</p></b><hr>
+                <button type="register.html">
+                    Register
+                </button> 
+                <p>By continuing, you agree to Volks Elevator's <b>Terms of Service, Privacy Policy</b></p>
+                
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to toggle password visibility
+        const passwordInput = document.getElementById('password');
+        const showPasswordIcon = document.getElementById('showPasswordIcon');
+        
+        showPasswordIcon.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+    </script>
+</body>
+</html>

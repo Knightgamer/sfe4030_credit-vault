@@ -1,0 +1,52 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* styles.css */
+.excel-sheet {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1px;
+}
+
+.excel-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.excel-cell {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.header-row {
+    background-color: #f0f0f0;
+}
