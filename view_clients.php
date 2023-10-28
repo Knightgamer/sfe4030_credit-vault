@@ -147,7 +147,7 @@ body {
         <div class="navigation">
             <a href="index.php" class="nav-button">Homepage</a>
             <a href="add_client.html" class="nav-button">Add New Client</a>
-            <a href="generate_report.html" class="nav-button">Generate Report</a>
+            <a href="generate_pdf.php" class="nav-button">Generate Report</a>
         </div>
     </div>
    
