@@ -1,15 +1,13 @@
 <?php
 session_start();
 
-// Include the database connection file
+// Include the database connection and authentication files
 require_once('database.php');
+require_once('authentication.php');
 
+// $conn = connectDatabase();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Initialize the error message
 $errorMessage = "";
@@ -18,32 +16,22 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE username = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $result = authenticateUser($username, $password, $conn);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $stored_hashed_password = $row['password'];
-
-        if (password_verify($password, $stored_hashed_password)) {
-            $_SESSION['username'] = $username;
-            header("Location: index.php");
-            exit();
-        } else {
-            $errorMessage = "Incorrect password";
-        }
+    if ($result === "Success") {
+        $_SESSION['username'] = $username;
+        header("Location: index.php");
+        exit();
     } else {
-        $errorMessage = "No user with the given username found";
+        $errorMessage = $result;
     }
-} else {
-    $errorMessage = "";
 }
 
 $conn->close();
 ?>
+
+<!-- ... the rest of your HTML code remains unchanged ... -->
+
 
 <!DOCTYPE html>
 <html lang="en">

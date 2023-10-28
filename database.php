@@ -1,10 +1,10 @@
 <?php
 $hostname = "localhost";
-$dbname = "root";
+$username = "root"; // Changed variable name from $dbname to $username
 $password = "";
 $database = "credit_control";
 
-$conn = new mysqli($hostname, $dbname, $password, $database);
+$conn = new mysqli($hostname, $username, $password, $database);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
