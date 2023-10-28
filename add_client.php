@@ -1,20 +1,20 @@
 <?php
-include 'database.php';
 session_start();
+require_once 'utils\db_util.php';
 
-// Get the first character of the username for display
+// Check if user is authenticated
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
+
 $userInitial = strtoupper(substr($_SESSION['username'], 0, 1));
 
-
-
-$_SESSION['new_client_added'] = true;
-
-
+// Process POST request
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $dbUtil = new DatabaseUtil(); // Create instance of DatabaseUtil
+    $conn = $dbUtil->connect(); // Use the connect method to get connection
+
     $clientName = $_POST['clientName'];
     $location = $_POST['location'];
     $buildingName = $_POST['buildingName'];
@@ -25,18 +25,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $paymentStatus = $_POST['paymentStatus'];
     $remainingValue = $amountPayable - $totalAmountPaid;
 
-    // Perform the database insert
-    $sql = "INSERT INTO clients (client_name, No_units,amount_payable, Advance, total_amount_paid, payment_status, remainingValue, location, building_name)
-    VALUES ('$clientName',  '$No_units ' ,'$amountPayable','$Advance','$totalAmountPaid', '$paymentStatus', '$remainingValue', '$location', '$buildingName')";
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare(
+        "INSERT INTO clients (client_name, No_units, amount_payable, Advance, total_amount_paid, payment_status, remainingValue, location, building_name)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    );
 
-    if ($conn->query($sql) === TRUE) {
+    $stmt->bind_param('sssssssss', $clientName, $No_units, $amountPayable, $Advance, $totalAmountPaid, $paymentStatus, $remainingValue, $location, $buildingName);
+
+    if ($stmt->execute()) {
         header('Location: view_clients.php?success=1');
     } else {
         echo 'Error adding client: ' . $conn->error;
     }
-}
 
-$conn->close();
+    $stmt->close();
+    $conn->close();
+}
 ?>
 
 
