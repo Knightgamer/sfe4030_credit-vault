@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) {
     session_destroy(); // Destroy the session data
 
     // Redirect to the login page or any other page as needed
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 } else {
     // If the user is not logged in, you can handle this situation accordingly

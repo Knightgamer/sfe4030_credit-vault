@@ -1,0 +1,98 @@
+/* Common styles for both login and registration pages */
+body {
+  background-color: #a1a1a1;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Header styles */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Logo styles */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 40%;
+}
+
+/* Form input styles */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Password input container styles */
+.password-container {
+  position: relative;
+}
+
+.password-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Show password icon styles */
+.show-password-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Button styles */
+button {
+  width: 50%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Small text styles */
+.small-text {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* Error message styles */
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 15px;
+}
