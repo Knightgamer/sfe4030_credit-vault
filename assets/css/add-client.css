@@ -1,0 +1,127 @@
+/* Set background image */
+body {
+  background-image: url("../../images/empty-escalator-view.jpg");
+  /* Replace 'background.png' with the path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Top navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.navigation {
+  text-align: center;
+}
+
+/* Style for navigation buttons */
+.nav-button,
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 150px;
+  /* Set a fixed width for all buttons */
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  /* Remove button border */
+  outline: none;
+  /* Remove button outline */
+}
+
+.nav-button:hover,
+button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+label {
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  color: #333;
+}
+input::placeholder {
+  color: #555;
+}
+.add-client-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-client-button:hover {
+  background-color: #555;
+}
+.add-client-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-client-button:hover {
+  background-color: #555;
+}
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent background to maintain the glassy look */
+}
+
+select {
+  appearance: none;
+  cursor: pointer;
+}
