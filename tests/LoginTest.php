@@ -31,8 +31,8 @@ class LoginTest extends TestCase
 
     public function testFailedAuthentication()
     {
-        $username = 'shivam'; // Replace with a valid test username from your DB
-        $password = 'shivam1'; // Replace with an invalid test password
+        $username = 'user4'; // Replace with a valid test username from your DB
+        $password = '88886'; // Replace with an invalid test password
 
         $result = authenticateUser($username, $password, $this->conn);
 

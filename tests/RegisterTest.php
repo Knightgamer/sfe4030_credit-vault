@@ -10,7 +10,7 @@ class RegisterTest extends TestCase
 
     protected function setUp(): void
     {
-        // $this->conn = connect();
+        $this->conn = connectDatabase();
     }
 
     protected function tearDown(): void
