@@ -1,0 +1,4 @@
+running test on the command line
+
+vendor/bin/phpunit tests/login.php 
+vendor/bin/phpunit tests/LoginTest.php  
