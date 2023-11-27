@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 require_once 'utils\db_util.php';
-require_once('authentication.php');
+require_once 'authentication.php';
 
 class LoginTest extends TestCase
 {

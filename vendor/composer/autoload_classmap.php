@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddClientTest' => $baseDir . '/tests/AddClientTest.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'EditTest' => $baseDir . '/tests/EditTest.php',
     'LoginTest' => $baseDir . '/tests/LoginTest.php',
     'PHPUnit\\Event\\Application\\Finished' => $vendorDir . '/phpunit/phpunit/src/Event/Events/Application/Finished.php',
     'PHPUnit\\Event\\Application\\FinishedSubscriber' => $vendorDir . '/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php',

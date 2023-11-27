@@ -36,6 +36,7 @@ class ComposerStaticInitb3002bdf7643e138ca987d42446fce99
     public static $classMap = array (
         'AddClientTest' => __DIR__ . '/../..' . '/tests/AddClientTest.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'EditTest' => __DIR__ . '/../..' . '/tests/EditTest.php',
         'LoginTest' => __DIR__ . '/../..' . '/tests/LoginTest.php',
         'PHPUnit\\Event\\Application\\Finished' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/Finished.php',
         'PHPUnit\\Event\\Application\\FinishedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php',
